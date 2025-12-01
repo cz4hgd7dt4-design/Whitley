@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>لعبة تجريبية</title>
+<style>body{font-family:system-ui;-webkit-font-smoothing:antialiased;text-align:center;padding:20px}button{padding:12px 18px;border-radius:8px;background:#2dd4bf;border:none}</style>
+</head>
+<body>
+  <h2>لعبة تجريبية</h2>
+  <p>اضغط لإرسال نتيجة عشوائية للتطبيق</p>
+  <button id="send">أرسل النتيجة</button>
+  <script>
+    document.getElementById('send').addEventListener('click', ()=>{
+      const score = Math.floor(Math.random()*1000);
+      // send message to parent app
+      if(window.parent){
+        window.parent.postMessage(JSON.stringify({type:'score', score}), '*');
+        alert('أرسلت النتيجة: ' + score);
+      }
+    });
+  </script>
+</body>
+</html>

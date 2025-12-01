@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WePlay Web - تطبيق ويب للألعاب</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>WePlay Web</h1>
+    <div id="coins" class="badge">عملات: <span id="coin-count">0</span></div>
+  </header>
+  <main>
+    <section id="home" class="view">
+      <h2>الرئيسية</h2>
+      <button id="daily-btn" class="btn">مكافأة يومية</button>
+      <button id="open-profile" class="btn">الملف الشخصي</button>
+      <button id="open-games" class="btn">الألعاب</button>
+      <h3>لوحة الصدارة</h3>
+      <div id="leaderboard" class="card"></div>
+    </section>
+
+    <section id="profile" class="view hidden">
+      <h2>الملف الشخصي</h2>
+      <label>الاسم: <input id="profile-name" /></label>
+      <label>الصورة (URL): <input id="profile-avatar" /></label>
+      <button id="save-profile" class="btn">حفظ</button>
+      <button class="btn back">رجوع</button>
+    </section>
+
+    <section id="games" class="view hidden">
+      <h2>قائمة الألعاب</h2>
+      <div id="games-list" class="card"></div>
+      <button class="btn back">رجوع</button>
+    </section>
+
+    <section id="gameplay" class="view hidden">
+      <h2 id="game-title">اللعبة</h2>
+      <div id="game-frame-wrap">
+        <iframe id="game-frame" src="" frameborder="0"></iframe>
+      </div>
+      <div class="game-actions">
+        <button id="finish-game" class="btn">أكملت - أرسل النتيجة</button>
+        <button class="btn back">رجوع</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>WePlay Web — نسخة ويب تعمل على iPhone بدون تثبيت</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
